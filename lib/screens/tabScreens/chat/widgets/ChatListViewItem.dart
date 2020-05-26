@@ -36,7 +36,7 @@ class ChatListViewItem extends StatelessWidget {
                 child: ListTile(
                   title: Text(
                     name,
-                    style: TextStyle(fontSize: 16),
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
                   ),
                   subtitle: Text(
                     lastMessage,
@@ -56,15 +56,15 @@ class ChatListViewItem extends StatelessWidget {
                     children: <Widget>[
                       Text(
                         time,
-                        style: TextStyle(fontSize: 12),
+                        style: TextStyle(fontSize: 12, fontWeight: FontWeight.w800, color: hasUnreadMessage ? AppColors.GreenDark : Colors.black54),
                       ),
                       hasUnreadMessage
                           ? Container(
-                              margin: const EdgeInsets.only(top: 5.0),
+                              margin: const EdgeInsets.only(top: 8.0),
                               height: 20,
                               width: 20,
                               decoration: BoxDecoration(
-                                  color: AppColors.RedDark,
+                                  color: AppColors.GreenDark,
                                   borderRadius: BorderRadius.all(
                                     Radius.circular(25.0),
                                   )),

@@ -10,17 +10,17 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatListPageViewState extends State<ChatScreen> {
-  bool isLoading = true;
+  bool isLoading = false;
 
   @override
   void initState() {
     super.initState();
 
-    Future.delayed(const Duration(seconds: 2), () {
-      setState(() {
-        isLoading = false;
-      });
-    });
+    // Future.delayed(const Duration(seconds: 1), () {
+    //   setState(() {
+    //     isLoading = false;
+    //   });
+    // });
   }
 
   @override
@@ -30,20 +30,21 @@ class _ChatListPageViewState extends State<ChatScreen> {
     } else {
       return Container(
         child: Scaffold(
-          backgroundColor: myColors.blue,
-          appBar: AppBar(
-            elevation: 0,
-            iconTheme: IconThemeData(
-              color: Colors.white,
-            ),
-            centerTitle: true,
-            title: Text(
-              'chats',
-              style: TextStyle(color: Colors.white, fontSize: 18),
-            ),
-          ),
+          // backgroundColor: myColors.blue,
+          // appBar: AppBar(
+          //   elevation: 0,
+          //   iconTheme: IconThemeData(
+          //     color: Colors.white,
+          //   ),
+          //   centerTitle: true,
+          //   title: Text(
+          //     'chats',
+          //     style: TextStyle(color: Colors.white, fontSize: 18),
+          //   ),
+          // ),
           body: Container(
             child: Container(
+              padding: EdgeInsets.only(top: 20),
               decoration: BoxDecoration(
                   color: myColors.backGround,
                   borderRadius: BorderRadius.only(
@@ -54,10 +55,10 @@ class _ChatListPageViewState extends State<ChatScreen> {
                 children: <Widget>[
                   ChatListViewItem(
                     hasUnreadMessage: true,
-                    image: AssetImage('assets/icons/app_icon.png'),
+                    image: AssetImage('assets/images/person1.jpg'),
                     lastMessage:
                         "Lorem ipsum dolor sit amet. Sed pharetra ante a blandit ultrices.",
-                    name: "Bree Jarvis",
+                    name: "Jaspinder Singh",
                     newMesssageCount: 8,
                     time: "19:27 PM",
                   ),
@@ -66,7 +67,7 @@ class _ChatListPageViewState extends State<ChatScreen> {
                     image: AssetImage('assets/images/person2.png'),
                     lastMessage:
                         "Lorem ipsum dolor sit amet. Sed pharetra ante a blandit ultrices.",
-                    name: "Alex",
+                    name: "Ajay Kumar",
                     newMesssageCount: 5,
                     time: "19:27 PM",
                   ),
@@ -75,17 +76,17 @@ class _ChatListPageViewState extends State<ChatScreen> {
                     image: AssetImage('assets/images/person3.jpg'),
                     lastMessage:
                         "Lorem ipsum dolor sit amet. Sed pharetra ante a blandit ultrices.",
-                    name: "Carson Sinclair",
+                    name: "Pawel",
                     newMesssageCount: 0,
                     time: "19:27 PM",
                   ),
                   ChatListViewItem(
-                    hasUnreadMessage: false,
+                    hasUnreadMessage: true,
                     image: AssetImage('assets/images/person4.png'),
                     lastMessage:
                         "Lorem ipsum dolor sit amet. Sed pharetra ante a blandit ultrices.",
-                    name: "Lucian Guerra",
-                    newMesssageCount: 0,
+                    name: "JD Singh",
+                    newMesssageCount: 11,
                     time: "19:27 PM",
                   ),
                   ChatListViewItem(
@@ -93,7 +94,7 @@ class _ChatListPageViewState extends State<ChatScreen> {
                     image: AssetImage('assets/images/person5.jpg'),
                     lastMessage:
                         "Lorem ipsum dolor sit amet. Sed pharetra ante a blandit ultrices.",
-                    name: "Sophia-Rose Bush",
+                    name: "Gurpreet Singh",
                     newMesssageCount: 0,
                     time: "19:27 PM",
                   ),
@@ -102,7 +103,7 @@ class _ChatListPageViewState extends State<ChatScreen> {
                     image: AssetImage('assets/images/person6.jpg'),
                     lastMessage:
                         "Lorem ipsum dolor sit amet. Sed pharetra ante a blandit ultrices.",
-                    name: "Mohammad",
+                    name: "Jacek",
                     newMesssageCount: 0,
                     time: "19:27 PM",
                   ),
@@ -111,7 +112,34 @@ class _ChatListPageViewState extends State<ChatScreen> {
                     image: AssetImage('assets/images/person7.jpg'),
                     lastMessage:
                         "Lorem ipsum dolor sit amet. Sed pharetra ante a blandit ultrices.",
-                    name: "Jimi Cooke",
+                    name: "Gaurav ",
+                    newMesssageCount: 0,
+                    time: "19:27 PM",
+                  ),
+                  ChatListViewItem(
+                    hasUnreadMessage: false,
+                    image: AssetImage('assets/images/person1.jpg'),
+                    lastMessage:
+                        "Lorem ipsum dolor sit amet. Sed pharetra ante a blandit ultrices.",
+                    name: "Pintu Kumar",
+                    newMesssageCount: 0,
+                    time: "19:27 PM",
+                  ),
+                  ChatListViewItem(
+                    hasUnreadMessage: false,
+                    image: AssetImage('assets/images/person2.png'),
+                    lastMessage:
+                        "Lorem ipsum dolor sit amet. Sed pharetra ante a blandit ultrices.",
+                    name: "Alex",
+                    newMesssageCount: 0,
+                    time: "19:27 PM",
+                  ),
+                  ChatListViewItem(
+                    hasUnreadMessage: false,
+                    image: AssetImage('assets/images/person3.jpg'),
+                    lastMessage:
+                        "Lorem ipsum dolor sit amet. Sed pharetra ante a blandit ultrices.",
+                    name: "Rahul",
                     newMesssageCount: 0,
                     time: "19:27 PM",
                   ),

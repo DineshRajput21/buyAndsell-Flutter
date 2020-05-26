@@ -81,6 +81,13 @@ class _ChatPageViewState extends State<ChatPageView> {
     return Scaffold(
       body: SafeArea(
         child: Container(
+          decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage(
+                                "assets/images/chat-background-1.jpg"),
+                            fit: BoxFit.cover,
+                            colorFilter: ColorFilter.linearToSrgbGamma()),
+                      ),
           child: Stack(
             fit: StackFit.loose,
             children: <Widget>[
@@ -92,13 +99,13 @@ class _ChatPageViewState extends State<ChatPageView> {
                   SizedBox(
                     height: 65,
                     child: Container(
-                      color: myColors.blue.withOpacity(1),
+                      color: Colors.transparent,
                       child: Row(
                         children: <Widget>[
                           IconButton(
                             icon: Icon(
                               Icons.arrow_back,
-                              color: Colors.white,
+                              color: Colors.black,
                             ),
                             onPressed: () {
                               Navigator.pop(context);
@@ -111,11 +118,11 @@ class _ChatPageViewState extends State<ChatPageView> {
                             children: <Widget>[
                               Text(
                                 widget.username ?? "Jimi Cooke",
-                                style: TextStyle(color: Colors.white, fontSize: 15),
+                                style: TextStyle(color: Colors.black, fontSize: 15),
                               ),
                               Text(
                                 "online",
-                                style: TextStyle(color: Colors.white60, fontSize: 12),
+                                style: TextStyle(color: Colors.black45, fontSize: 12),
                               ),
                             ],
                           ),
