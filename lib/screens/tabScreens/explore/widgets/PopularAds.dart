@@ -5,7 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flip_panel/flip_panel.dart';
 
 class PopularAds extends StatelessWidget {
-  List<Map<String, dynamic>> addsArray = [
+  final List<Map<String, dynamic>> addsArray = [
     {
       'icon': 'assets/images/recommendImages/cycle.jpeg',
       'name': 'Bike for girls',
@@ -72,7 +72,7 @@ class PopularAds extends StatelessWidget {
                           child: Card(
                             child: Container(
                               width: width / 2,
-                              height: width / 5,
+                              height: width / 4.5,
                               padding: EdgeInsets.all(10.0),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
