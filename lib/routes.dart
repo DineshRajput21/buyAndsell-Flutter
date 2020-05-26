@@ -1,4 +1,6 @@
 
+import 'package:BuyAndSell/screens/exploreScreens/freshAds/FreshAdsScreen.dart';
+import 'package:BuyAndSell/screens/settings/screens/Help.dart';
 import 'package:flutter/material.dart';
 
 import 'screens/splash/Splash.dart';
@@ -13,11 +15,15 @@ class Routes {
   static const String tabs = '/tabs';
   static const String categories = '/categories';
   static const String adsDetails = '/adsDetails';
+  static const String help = '/help';
+  static const String freshAds = '/freshAds';
 
   static final routes = <String, WidgetBuilder>{
     splash: (BuildContext context) => SplashScreen(),
     tabs: (BuildContext context) => Tabs(),
     categories: (BuildContext context) => CategoriesScreen(),
     adsDetails: (BuildContext context) => AdsDetailScreen(),
+    help: (BuildContext context) => HelpScreen(),
+    freshAds: (BuildContext context) => FreshAdsScreen(),
   };
 }

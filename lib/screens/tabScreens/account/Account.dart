@@ -1,3 +1,4 @@
+import 'package:BuyAndSell/routes.dart';
 import 'package:flutter/material.dart';
 
 class AccountScreen extends StatefulWidget {
@@ -16,7 +17,9 @@ class _AccountScreenState extends State<AccountScreen> {
   Widget build(BuildContext context) {
     return Material(
       child: Center(
-        child: Text("AccountScreen"),
+        child: InkWell(
+          onTap: ()=> Navigator.of(context).pushNamed(Routes.help),
+          child: Text("AccountScreen")),
       ),
     );
   }

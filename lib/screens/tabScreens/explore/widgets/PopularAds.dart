@@ -46,9 +46,9 @@ class PopularAds extends StatelessWidget {
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: addsArray.length,
-              itemBuilder: (BuildContext context, int index) => 
-                 GestureDetector(
-                onTap: () => Navigator.of(context).pushNamed(Routes.adsDetails, arguments: addsArray[index]['name']),
+              itemBuilder: (BuildContext context, int index) => InkWell(
+                onTap: () => Navigator.of(context).pushNamed(Routes.adsDetails,
+                    arguments: addsArray[index]['name']),
                 child: Container(
                   child: Stack(
                     alignment: Alignment.center,

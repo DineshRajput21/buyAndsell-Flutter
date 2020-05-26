@@ -76,7 +76,7 @@ class CategorySwiper extends StatelessWidget {
                 Text(
                   'Categories',
                   style: TextStyle(
-                      fontSize: 14,
+                      fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: Colors.black),
                 ),
