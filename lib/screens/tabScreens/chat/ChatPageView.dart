@@ -1,4 +1,6 @@
+import 'package:BuyAndSell/constants/AppColors.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import './widgets/Colors.dart' as myColors;
 import './widgets/ReceivedMessageWidget.dart';
 import './widgets/SendedMessageWidget.dart';
@@ -43,32 +45,58 @@ class _ChatPageViewState extends State<ChatPageView> {
     childList.add(Align(
       alignment: Alignment(1, 0),
       child: SendedMessageWidget(
-        content: 'Hello',
-        time: '21:36 PM',
+        content: '  Hey!   ',
+        time: '04:36 pm',
       ),
     ));
     childList.add(Align(
       alignment: Alignment(1, 0),
       child: SendedMessageWidget(
-        content: 'How are you? What are you doing?',
-        time: '21:36 PM',
+        content: "How are you? What's up?",
+        time: '04:36 pm',
       ),
     ));
-    childList.add(Align(
-      alignment: Alignment(-1, 0),
-      child: ReceivedMessageWidget(
-        content: 'Hello, Mohammad.I am fine. How are you?',
-        time: '22:40 PM',
+    childList.add(
+      Align(
+        alignment: Alignment(-1, 0),
+        child: ReceivedMessageWidget(
+          content: 'Hello, Jaspinder. I am fine. How are you?',
+          time: '04:40 pm',
+        ),
       ),
-    ));
+    );
     childList.add(Align(
       alignment: Alignment(1, 0),
       child: SendedMessageWidget(
-        content:
-            'I am good. Can you do something for me? I need your help my bro.',
-        time: '22:40 PM',
+        content: 'I am good. I want to buy your car.',
+        time: '04:41 pm',
       ),
     ));
+    childList.add(
+      Align(
+        alignment: Alignment(-1, 0),
+        child: ReceivedMessageWidget(
+          content: 'Yeah, I want sell it!',
+          time: '04:42 pm',
+        ),
+      ),
+    );
+    childList.add(Align(
+      alignment: Alignment(1, 0),
+      child: SendedMessageWidget(
+        content: "What's the final price?",
+        time: '04:45 pm',
+      ),
+    ));
+    childList.add(
+      Align(
+        alignment: Alignment(-1, 0),
+        child: ReceivedMessageWidget(
+          content: "\$2000, only for you.",
+          time: '04:50 pm',
+        ),
+      ),
+    );
   }
 
   @override
@@ -82,12 +110,11 @@ class _ChatPageViewState extends State<ChatPageView> {
       body: SafeArea(
         child: Container(
           decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage(
-                                "assets/images/chat-background-1.jpg"),
-                            fit: BoxFit.cover,
-                            colorFilter: ColorFilter.linearToSrgbGamma()),
-                      ),
+            image: DecorationImage(
+                image: AssetImage("assets/images/chat-background-1.jpg"),
+                fit: BoxFit.cover,
+                colorFilter: ColorFilter.linearToSrgbGamma()),
+          ),
           child: Stack(
             fit: StackFit.loose,
             children: <Widget>[
@@ -117,12 +144,14 @@ class _ChatPageViewState extends State<ChatPageView> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               Text(
-                                widget.username ?? "Jimi Cooke",
-                                style: TextStyle(color: Colors.black, fontSize: 15),
+                                widget.username ?? "Jaspinder Singh",
+                                style: TextStyle(
+                                    color: Colors.black, fontSize: 15),
                               ),
                               Text(
                                 "online",
-                                style: TextStyle(color: Colors.black45, fontSize: 12),
+                                style: TextStyle(
+                                    color: AppColors.GreenDark, fontSize: 12),
                               ),
                             ],
                           ),
@@ -201,7 +230,7 @@ class _ChatPageViewState extends State<ChatPageView> {
                         decoration: InputDecoration(
                           // contentPadding: const EdgeInsets.symmetric(horizontal: 5.0),
                           suffixIcon: IconButton(
-                            icon: Icon(Icons.send),
+                            icon: Icon(FontAwesomeIcons.paperPlane),
                             onPressed: () {},
                           ),
                           border: InputBorder.none,

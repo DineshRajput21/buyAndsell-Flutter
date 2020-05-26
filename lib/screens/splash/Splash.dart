@@ -29,7 +29,8 @@ class _SplashScreenState extends State<SplashScreen> {
     return Timer(_duration, navigate);
   }
   navigate() async {
-      Navigator.of(context).pushReplacementNamed(Routes.tabs);
+      // Navigator.of(context).pushReplacementNamed(Routes.tabs);
+      Navigator.of(context).pushReplacementNamed(Routes.login);
   }
 }
 

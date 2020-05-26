@@ -1,4 +1,6 @@
+import 'package:BuyAndSell/constants/AppColors.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import './Colors.dart' as myColors;
 
 class ReceivedMessageWidget extends StatelessWidget {
@@ -23,22 +25,34 @@ class ReceivedMessageWidget extends StatelessWidget {
             topLeft: Radius.circular(15),
             topRight: Radius.circular(15)),
         child: Container(
-          color: myColors.orange[700],
+          color: AppColors.GreenDark,
           child: Stack(children: <Widget>[
             Padding(
-              padding: const EdgeInsets.only(right: 8.0, left: 8.0, top: 8.0, bottom: 15.0),
+              padding: const EdgeInsets.only(
+                  right: 8.0, left: 8.0, top: 8.0, bottom: 25.0),
               child: Text(
                 content,
+                style: TextStyle(color: Colors.white),
               ),
             ),
             Positioned(
-              bottom: 1,
-              right: 10,
-              child: Text(
-                time,
-                style: TextStyle(
-                    fontSize: 10, color: Colors.black.withOpacity(0.6)),
-              ),
+              bottom: 4,
+              right: 15,
+              child: Padding(
+                  padding: EdgeInsets.all(5),
+                  child: Row(
+                    children: <Widget>[
+                      Text(
+                        time,
+                        style: TextStyle(
+                            fontSize: 10,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Padding(padding: EdgeInsets.only(left:20)),
+                      Icon(FontAwesomeIcons.checkDouble, size: 12, color: Colors.white,)
+                    ],
+                  )),
             )
           ]),
         ),
