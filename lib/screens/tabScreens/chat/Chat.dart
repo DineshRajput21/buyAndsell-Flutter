@@ -1,135 +1,126 @@
-import 'dart:ui';
-
-import 'package:BuyAndSell/constants/AppColors.dart';
 import 'package:flutter/material.dart';
-import 'package:image/image.dart';
+import './widgets/Colors.dart' as myColors;
+import './Widgets/ChatListViewItem.dart';
+import './widgets/Loading.dart';
 
-class ChatScreen extends StatelessWidget {
-  ChatScreen({Key key}) : super(key: key);
-  final europeanCountries = [
-    'Albania',
-    'Andorra',
-    'Armenia',
-    'Austria',
-    'Azerbaijan',
-    'Belarus',
-    'Belgium',
-    'Bosnia and Herzegovina',
-    'Bulgaria',
-    'Croatia',
-    'Cyprus',
-    'Czech Republic',
-  ];
+class ChatScreen extends StatefulWidget {
+   ChatScreen({Key key}) : super(key: key);
+  @override
+  _ChatListPageViewState createState() => _ChatListPageViewState();
+}
+
+class _ChatListPageViewState extends State<ChatScreen> {
+  bool isLoading = true;
+
+  @override
+  void initState() {
+    super.initState();
+
+    Future.delayed(const Duration(seconds: 2), () {
+      setState(() {
+        isLoading = false;
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: SafeArea(
-        child: Container(
-          child: Column(
-            children: <Widget>[
-              _listView(),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _listView() {
-    return Expanded(
-      child: SizedBox(
-        height: 200.0,
-        child: ListView.builder(
-            itemCount: europeanCountries.length,
-            itemBuilder: (context, index) => displayListTile(index, context)),
-      ),
-    );
-  }
-
-  Widget displayListTile(index, context) {
-    return ListTile(
-      title: Container(
-        width: MediaQuery.of(context).size.width * 0.6,
-        child: Card(
-          color: Colors.white,
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              boxShadow: [
-                BoxShadow(color: AppColors.Green, spreadRadius: 5),
-              ],
+    if (isLoading == true) {
+      return Loading();
+    } else {
+      return Container(
+        child: Scaffold(
+          backgroundColor: myColors.blue,
+          appBar: AppBar(
+            elevation: 0,
+            iconTheme: IconThemeData(
+              color: Colors.white,
             ),
-            padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-            child: Row(
-              children: <Widget>[
-                doerImage(AssetImage('assets/icons/app_icon.jpg')),
-                doersCard(index),
-              ],
+            centerTitle: true,
+            title: Text(
+              'chats',
+              style: TextStyle(color: Colors.white, fontSize: 18),
             ),
           ),
-        ),
-      ),
-    );
-  }
-
-  Widget doerImage(image) {
-    return Container(
-      width: 50.0,
-      height: 50.0,
-      margin: EdgeInsets.only(left: 10),
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        image: DecorationImage(
-          fit: BoxFit.cover,
-          image: image,
-        ),
-      ),
-    );
-  }
-
-  Widget doersCard(index) {
-    return Container(
-      margin: EdgeInsets.only(left: 20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          Text(
-            europeanCountries[index],
-            maxLines: 1,
-            style: TextStyle(
-                fontSize: 18.0,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontFamily: 'Montserrat'),
-          ),
-          Text(
-            'Awesome! wel done!',
-            style: TextStyle(
-                fontSize: 12.0,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontFamily: 'Montserrat'),
-          ),
-          Row(
-            children: <Widget>[
-              Icon(
-                Icons.star,
-                color: Colors.black,
+          body: Container(
+            child: Container(
+              decoration: BoxDecoration(
+                  color: myColors.backGround,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(15.0),
+                    topRight: Radius.circular(15.0),
+                  )),
+              child: ListView(
+                children: <Widget>[
+                  ChatListViewItem(
+                    hasUnreadMessage: true,
+                    image: AssetImage('assets/icons/app_icon.png'),
+                    lastMessage:
+                        "Lorem ipsum dolor sit amet. Sed pharetra ante a blandit ultrices.",
+                    name: "Bree Jarvis",
+                    newMesssageCount: 8,
+                    time: "19:27 PM",
+                  ),
+                  ChatListViewItem(
+                    hasUnreadMessage: true,
+                    image: AssetImage('assets/images/person2.png'),
+                    lastMessage:
+                        "Lorem ipsum dolor sit amet. Sed pharetra ante a blandit ultrices.",
+                    name: "Alex",
+                    newMesssageCount: 5,
+                    time: "19:27 PM",
+                  ),
+                  ChatListViewItem(
+                    hasUnreadMessage: false,
+                    image: AssetImage('assets/images/person3.jpg'),
+                    lastMessage:
+                        "Lorem ipsum dolor sit amet. Sed pharetra ante a blandit ultrices.",
+                    name: "Carson Sinclair",
+                    newMesssageCount: 0,
+                    time: "19:27 PM",
+                  ),
+                  ChatListViewItem(
+                    hasUnreadMessage: false,
+                    image: AssetImage('assets/images/person4.png'),
+                    lastMessage:
+                        "Lorem ipsum dolor sit amet. Sed pharetra ante a blandit ultrices.",
+                    name: "Lucian Guerra",
+                    newMesssageCount: 0,
+                    time: "19:27 PM",
+                  ),
+                  ChatListViewItem(
+                    hasUnreadMessage: false,
+                    image: AssetImage('assets/images/person5.jpg'),
+                    lastMessage:
+                        "Lorem ipsum dolor sit amet. Sed pharetra ante a blandit ultrices.",
+                    name: "Sophia-Rose Bush",
+                    newMesssageCount: 0,
+                    time: "19:27 PM",
+                  ),
+                  ChatListViewItem(
+                    hasUnreadMessage: false,
+                    image: AssetImage('assets/images/person6.jpg'),
+                    lastMessage:
+                        "Lorem ipsum dolor sit amet. Sed pharetra ante a blandit ultrices.",
+                    name: "Mohammad",
+                    newMesssageCount: 0,
+                    time: "19:27 PM",
+                  ),
+                  ChatListViewItem(
+                    hasUnreadMessage: false,
+                    image: AssetImage('assets/images/person7.jpg'),
+                    lastMessage:
+                        "Lorem ipsum dolor sit amet. Sed pharetra ante a blandit ultrices.",
+                    name: "Jimi Cooke",
+                    newMesssageCount: 0,
+                    time: "19:27 PM",
+                  ),
+                ],
               ),
-              Text(
-                '6/ 10',
-                style: TextStyle(
-                    fontSize: 12.0,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Montserrat'),
-              )
-            ],
-          )
-        ],
-      ),
-    );
+            ),
+          ),
+        ),
+      );
+    }
   }
 }

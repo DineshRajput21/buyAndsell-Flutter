@@ -198,7 +198,51 @@ class _AdsDetialScreenState extends State<AdsDetailScreen>
                           children: <Widget>[
                             Divider(
                               color: Colors.black12,
-                              thickness: 5,
+                              thickness: 1,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                  top: 10.0, right: 16, bottom: 20),
+                              child: Text(
+                                'Posted By',
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 18,
+                                  letterSpacing: 0.27,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                            Text(
+                              'Lorem ipsum is simply dummy text of printing &  typesetting industry, Lorem ipsum is simply dummy text of printing & typesetting industry. ',
+                              textAlign: TextAlign.justify,
+                              style: TextStyle(
+                                fontWeight: FontWeight.w300,
+                                fontSize: 14,
+                                letterSpacing: 0.27,
+                                color: Colors.black,
+                              ),
+                              maxLines: 10,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ],
+                        )),
+                  ),
+                ),
+                Expanded(
+                  child: AnimatedOpacity(
+                    duration: const Duration(milliseconds: 500),
+                    opacity: opacity2,
+                    child: Padding(
+                        padding: const EdgeInsets.only(
+                            left: 16, right: 16, top: 8, bottom: 20),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Divider(
+                              color: Colors.black12,
+                              thickness: 1,
                             ),
                             Padding(
                               padding: const EdgeInsets.only(
@@ -242,7 +286,7 @@ class _AdsDetialScreenState extends State<AdsDetailScreen>
                           children: <Widget>[
                             Divider(
                               color: Colors.black12,
-                              thickness: 5,
+                              thickness: 1,
                             ),
                             Padding(
                               padding: const EdgeInsets.only(
@@ -284,19 +328,19 @@ class _AdsDetialScreenState extends State<AdsDetailScreen>
           duration: const Duration(milliseconds: 500),
           opacity: opacity3,
           child: Padding(
-            padding: const EdgeInsets.only(top: 10, left: 16, right: 16),
+            padding: const EdgeInsets.only(top: 10, left: 16, right: 16, bottom: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Container(
-                  width: 60,
-                  height: 60,
+                  width: 50,
+                  height: 50,
                   child: Container(
                     decoration: BoxDecoration(
                         border:
                             Border.all(color: AppColors.RedDark, width: 1.0),
-                        borderRadius: BorderRadius.circular(50.0),
+                        borderRadius: BorderRadius.circular(25.0),
                         color: Colors.white,
                         boxShadow: [
                           BoxShadow(color: AppColors.Red, blurRadius: 10.0)
@@ -304,7 +348,7 @@ class _AdsDetialScreenState extends State<AdsDetailScreen>
                     child: Icon(
                       FontAwesomeIcons.heartbeat,
                       color: AppColors.RedDark,
-                      size: 40,
+                      size: 30,
                     ),
                   ),
                 ),

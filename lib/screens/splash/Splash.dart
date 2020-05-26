@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Material(
       child: Center(
-        child: AppIconWidget(image: 'assets/icons/app_icon.jpg'),
+        child: AppIconWidget(image: 'assets/icons/app_icon.png'),
       ),
     );
   }
