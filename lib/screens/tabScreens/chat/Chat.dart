@@ -1,3 +1,4 @@
+import 'package:BuyAndSell/constants/AppColors.dart';
 import 'package:flutter/material.dart';
 import './widgets/Colors.dart' as myColors;
 import './Widgets/ChatListViewItem.dart';
@@ -27,9 +28,6 @@ class _ChatListPageViewState extends State<ChatScreen> {
             headerSliverBuilder:
                 (BuildContext context, bool innerBoxIsScrolled) {
               return <Widget>[
-                SliverOverlapAbsorber(
-                  handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
-                  child:
                 SliverSafeArea(
                   top: false,
                   sliver: SliverAppBar(
@@ -46,27 +44,34 @@ class _ChatListPageViewState extends State<ChatScreen> {
                     snap: true,
                     primary: true,
                     forceElevated: innerBoxIsScrolled,
-                    bottom: TabBar(tabs: <Widget>[
-                      Padding(
-                        padding: EdgeInsets.only(bottom: 10),
-                        child: Text(
-                          'BUYING',
-                          style: TextStyle(
-                            color: Colors.black,
+                    bottom: TabBar(
+                        // indicator: UnderlineTabIndicator(
+                        //   borderSide: BorderSide(width: 5.0),
+                        // ),
+                        unselectedLabelColor: Colors.grey,
+                        indicatorColor: AppColors.RedDark,
+                        tabs: <Widget>[
+                          Padding(
+                            padding: EdgeInsets.only(bottom: 10),
+                            child: Text(
+                              'BUYING',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.bold),
+                            ),
                           ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(bottom: 10),
-                        child: Text(
-                          'SELLING',
-                          style: TextStyle(
-                            color: Colors.black,
+                          Padding(
+                            padding: EdgeInsets.only(bottom: 10),
+                            child: Text(
+                              'SELLING',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.bold),
+                            ),
                           ),
-                        ),
-                      ),
-                    ]),
-                  ),
+                        ]),
                   ),
                 ),
               ];

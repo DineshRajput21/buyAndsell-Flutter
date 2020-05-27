@@ -39,15 +39,15 @@ class LocationBar extends StatelessWidget {
               ),
             ],
           ),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(20.0),
-            child: Image.asset(
-              'assets/icons/app_icon.png',
-              fit: BoxFit.fill,
-              height: 40.0,
-              width: 40.0,
-            ),
-          ),
+          // ClipRRect(
+          //   borderRadius: BorderRadius.circular(20.0),
+          //   child: Image.asset(
+          //     'assets/icons/app_icon.png',
+          //     fit: BoxFit.fill,
+          //     height: 40.0,
+          //     width: 40.0,
+          //   ),
+          // ),
         ],
       ),
     );
