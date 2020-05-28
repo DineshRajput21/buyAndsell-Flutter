@@ -1,8 +1,8 @@
-import 'package:BuyAndSell/screens/tabScreens/account/Account.dart';
 import 'package:BuyAndSell/screens/tabScreens/chat/Chat.dart';
 import 'package:BuyAndSell/screens/tabScreens/explore/Explore.dart';
 import 'package:BuyAndSell/screens/tabScreens/myAds/MyAds.dart';
 import 'package:BuyAndSell/screens/tabScreens/sell/Sell.dart';
+import 'package:BuyAndSell/screens/tabScreens/settings/Settings.dart';
 import 'package:flutter/material.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:BuyAndSell/constants/AppColors.dart';
@@ -28,7 +28,7 @@ class _TabsState extends State<Tabs> {
       key: PageStorageKey('Page3'),
     ),
     MyAdsScreen(key: PageStorageKey('page5')),
-    AccountScreen(
+    Settings(
       key: PageStorageKey('Page4'),
     ),
   ];
@@ -69,8 +69,8 @@ class _TabsState extends State<Tabs> {
               activeColor: AppColors.YellowDark),
           BottomNavyBarItem(
               textAlign: TextAlign.center,
-              icon: Icon(FontAwesomeIcons.userCircle),
-              title: Text('ACCOUNT'),
+              icon: Icon(FontAwesomeIcons.tools),
+              title: Text('Settings'),
               activeColor: AppColors.BlueDark),
         ],
       ),

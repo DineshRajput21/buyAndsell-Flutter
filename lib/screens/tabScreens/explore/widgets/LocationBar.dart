@@ -25,7 +25,10 @@ class LocationBar extends StatelessWidget {
                 padding: EdgeInsets.only(top: 5),
                 child: Row(
                   children: <Widget>[
-                    Icon(FontAwesomeIcons.mapMarkerAlt, size: 16,),
+                    Icon(
+                      FontAwesomeIcons.mapMarkerAlt,
+                      size: 16,
+                    ),
                     Text(
                       ' ucreate.it, mohali, India ',
                       style: TextStyle(
@@ -33,21 +36,18 @@ class LocationBar extends StatelessWidget {
                           fontWeight: FontWeight.w500,
                           color: Colors.black),
                     ),
-                    Icon(FontAwesomeIcons.caretDown, size: 16,),
+                    Icon(
+                      FontAwesomeIcons.caretDown,
+                      size: 16,
+                    ),
                   ],
                 ),
               ),
             ],
           ),
-          // ClipRRect(
-          //   borderRadius: BorderRadius.circular(20.0),
-          //   child: Image.asset(
-          //     'assets/icons/app_icon.png',
-          //     fit: BoxFit.fill,
-          //     height: 40.0,
-          //     width: 40.0,
-          //   ),
-          // ),
+          CircleAvatar(
+            backgroundImage: AssetImage('assets/icons/me.jpg'),
+          ),
         ],
       ),
     );
