@@ -1,4 +1,5 @@
 import 'package:BuyAndSell/routes.dart';
+import 'package:BuyAndSell/widgets/AdsItem/AdsItem.dart';
 import 'package:flutter/material.dart';
 
 class FreshAds extends StatelessWidget {

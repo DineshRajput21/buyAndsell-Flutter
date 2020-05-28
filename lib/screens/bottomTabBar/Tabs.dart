@@ -27,9 +27,10 @@ class _TabsState extends State<Tabs> {
     SellScreen(
       key: PageStorageKey('Page3'),
     ),
-    MyAdsScreen(key: PageStorageKey('page5')),
+    MyAdsScreen(
+      key: PageStorageKey('page4')),
     Settings(
-      key: PageStorageKey('Page4'),
+      key: PageStorageKey('Page5'),
     ),
   ];
 
@@ -61,12 +62,12 @@ class _TabsState extends State<Tabs> {
               textAlign: TextAlign.center,
               icon: Icon(FontAwesomeIcons.cameraRetro),
               title: Text('SELL'),
-              activeColor: AppColors.GreenDark),
+              activeColor: AppColors.YellowDark),
           BottomNavyBarItem(
               textAlign: TextAlign.center,
               icon: Icon(FontAwesomeIcons.images),
               title: Text('MY ADS'),
-              activeColor: AppColors.YellowDark),
+              activeColor: AppColors.GreenDark),
           BottomNavyBarItem(
               textAlign: TextAlign.center,
               icon: Icon(FontAwesomeIcons.tools),

@@ -11,6 +11,8 @@ class AppColors {
   static const YellowDark = Color(0xFFF4B400);
   static const RedDark = Color(0xFFDB4437);
   static const LightGrey = Color(0xFFF6F6F6);
+  static const ManuGrey = Color(0xFFDDDDDD);
+  
   static const Map<int, Color> orange = const <int, Color>{
     50: const Color(0xFFFCF2E7),
     100: const Color(0xFFF8DEC3),

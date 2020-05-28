@@ -1,5 +1,6 @@
 import 'package:BuyAndSell/constants/AppColors.dart';
 import 'package:BuyAndSell/routes.dart';
+import 'package:BuyAndSell/screens/tabScreens/explore/widgets/FreshAds.dart';
 import 'package:flutter/material.dart';
 
 class MyAdsScreen extends StatefulWidget {
@@ -33,8 +34,6 @@ class _MyAdsScreenState extends State<MyAdsScreen> {
                       'MY ADS',
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
                       ),
                     ),
                     floating: true,
@@ -43,38 +42,57 @@ class _MyAdsScreenState extends State<MyAdsScreen> {
                     primary: true,
                     forceElevated: innerBoxIsScrolled,
                     bottom: TabBar(
-                      indicatorColor: AppColors.RedDark,
-                      // isScrollable: true,
-                      tabs: <Widget>[
-                      Padding(
-                        padding: EdgeInsets.only(bottom: 10),
-                        child: Text(
-                          'ADS',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(bottom: 10),
-                        child: Text(
-                          'FAVOURITES',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                    ]),
+                        unselectedLabelColor: AppColors.GreenDark,
+                        indicatorSize: TabBarIndicatorSize.label,
+                        indicator: BoxDecoration(
+                            borderRadius: BorderRadius.circular(40),
+                            color: AppColors.GreenDark),
+                        tabs: [
+                          Tab(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(40),
+                                  border: Border.all(
+                                      color: AppColors.GreenDark, width: 1)),
+                              child: Align(
+                                alignment: Alignment.center,
+                                child: Text("ADS"),
+                              ),
+                            ),
+                          ),
+                          Tab(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(50),
+                                  border: Border.all(
+                                      color: AppColors.GreenDark, width: 1)),
+                              child: Align(
+                                alignment: Alignment.center,
+                                child: Text("FAVOURITE"),
+                              ),
+                            ),
+                          ),
+                        ]),
                   ),
                 ),
               ];
             },
             body: TabBarView(
               children: <Widget>[
-                Text('No data'),
-                Text('No data'),
+                SingleChildScrollView(
+                  child: Column(
+                    children: <Widget>[
+                      FreshAds(),
+                    ],
+                  ),
+                ),
+                SingleChildScrollView(
+                  child: Column(
+                    children: <Widget>[
+                      FreshAds(),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),

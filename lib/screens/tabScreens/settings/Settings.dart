@@ -1,26 +1,21 @@
 // import 'package:cached_network_image/cached_network_image.dart';
 import 'package:BuyAndSell/constants/AppColors.dart';
 import 'package:BuyAndSell/routes.dart';
-/**
- * Author: Damodar Lohani
- * profile: https://github.com/lohanidamodar
-  */
+import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 
 import 'package:flutter/material.dart';
-// import 'package:flutter_ui_challenges/core/presentation/res/assets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Settings extends StatefulWidget {
   Settings({Key key}) : super(key: key);
-  static final String path = "lib/src/pages/settings/settings1.dart";
-
   @override
   State<StatefulWidget> createState() => _SettingsState();
 }
 
 class _SettingsState extends State<Settings> {
   bool _dark;
-
+  bool _notification = true;
+  bool _messageNotification = false;
   @override
   void initState() {
     super.initState();
@@ -44,34 +39,33 @@ class _SettingsState extends State<Settings> {
           elevation: 0,
           brightness: _getBrightness(),
           iconTheme: IconThemeData(color: _dark ? Colors.white : Colors.black),
-          backgroundColor: Colors.transparent,
+          backgroundColor: AppColors.ManuGrey,
           title: Text(
             'Settings',
-            style: TextStyle(color: _dark ? Colors.white : Colors.black),
+            style: TextStyle(color: _dark ? Colors.black : Colors.black),
           ),
-          actions: <Widget>[
-            IconButton(
-              icon: Icon(FontAwesomeIcons.moon),
-              onPressed: () {
-                setState(() {
-                  _dark = !_dark;
-                });
-              },
-            )
-          ],
         ),
         body: Stack(
           fit: StackFit.expand,
           children: <Widget>[
+            ClipPath(
+            clipper: WaveClipperTwo(),
+            child: Container(
+              decoration: BoxDecoration(
+                color: AppColors.ManuGrey
+              ),
+              height: 100,
+            ),
+          ),
             SingleChildScrollView(
-              padding: const EdgeInsets.all(16.0),
+              padding: const EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 10.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Card(
-                    elevation: 8.0,
+                    elevation: 10.0,
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0)),
+                        borderRadius: BorderRadius.circular(30.0)),
                     color: AppColors.BlueDark,
                     child: ListTile(
                       onTap: () {
@@ -88,17 +82,18 @@ class _SettingsState extends State<Settings> {
                         backgroundImage: AssetImage('assets/icons/me.jpg'),
                       ),
                       trailing: Icon(
-                        Icons.edit,
+                        FontAwesomeIcons.edit,
                         color: Colors.white,
+                        size: 20,
                       ),
                     ),
                   ),
                   const SizedBox(height: 10.0),
                   Card(
                     elevation: 4.0,
-                    margin: const EdgeInsets.fromLTRB(32.0, 8.0, 32.0, 16.0),
+                    margin: const EdgeInsets.fromLTRB(10.0, 8.0, 10.0, 16.0),
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0)),
+                        borderRadius: BorderRadius.circular(20.0)),
                     child: Column(
                       children: <Widget>[
                         ListTile(
@@ -139,79 +134,82 @@ class _SettingsState extends State<Settings> {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 20.0),
-                  Text(
-                    "Notification Settings",
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
+                  const SizedBox(height: 30.0),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 15),
+                    child: Column(
+                      children: <Widget>[
+                        Text(
+                          "Notification Settings",
+                          style: TextStyle(
+                            fontSize: 17.0,
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.RedDark,
+                          ),
+                        ),
+                        SwitchListTile(
+                          activeColor: AppColors.GreenDark,
+                          contentPadding: EdgeInsets.all(0),
+                          value: _notification,
+                          title: Text("Received notification"),
+                          onChanged: (val) {
+                            setState(() {
+                              _notification = !_notification;
+                            });
+                          },
+                        ),
+                        SwitchListTile(
+                          activeColor: AppColors.GreenDark,
+                          contentPadding: EdgeInsets.all(0),
+                          value: _messageNotification,
+                          title: Text("Received chat Notification"),
+                          onChanged: (val) {
+                            setState(() {
+                              _messageNotification = !_messageNotification;
+                            });
+                          },
+                        ),
+                        const SizedBox(height: 30.0),
+                      ],
                     ),
                   ),
-                  SwitchListTile(
-                    activeColor: AppColors.GreenDark,
-                    contentPadding: const EdgeInsets.all(0),
-                    value: true,
-                    title: Text("Received notification"),
-                    onChanged: (val) {},
-                  ),
-                  SwitchListTile(
-                    activeColor: AppColors.GreenDark,
-                    contentPadding: const EdgeInsets.all(0),
-                    value: false,
-                    title: Text("Received newsletter"),
-                    onChanged: null,
-                  ),
-                  SwitchListTile(
-                    activeColor: AppColors.GreenDark,
-                    contentPadding: const EdgeInsets.all(0),
-                    value: true,
-                    title: Text("Received Offer Notification"),
-                    onChanged: (val) {},
-                  ),
-                  SwitchListTile(
-                    activeColor: AppColors.GreenDark,
-                    contentPadding: const EdgeInsets.all(0),
-                    value: true,
-                    title: Text("Received App Updates"),
-                    onChanged: null,
-                  ),
-                  const SizedBox(height: 60.0),
                 ],
               ),
             ),
-            InkWell(
-              onTap: ()=> Navigator.of(context).pushReplacementNamed(Routes.login),
-                child: Stack(
+            Stack(
               children: <Widget>[
                 Positioned(
                   bottom: -20,
-                  left: -20,
-                  child: Container(
-                    width: 80,
-                    height: 80,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      color: AppColors.BlueDark,
-                      shape: BoxShape.circle,
+                  right: -20,
+                  child: InkWell(
+                    onTap: () => Navigator.of(context)
+                        .pushReplacementNamed(Routes.login),
+                    child: Container(
+                      width: 80,
+                      height: 80,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: AppColors.BlueDark,
+                        shape: BoxShape.circle,
+                      ),
                     ),
                   ),
                 ),
                 Positioned(
                   bottom: 00,
-                  left: 00,
+                  right: 00,
                   child: IconButton(
                     icon: Icon(
                       FontAwesomeIcons.powerOff,
                       color: Colors.white,
                     ),
                     onPressed: () {
-                      //log out
+                      Navigator.of(context).pushReplacementNamed(Routes.login);
                     },
                   ),
                 ),
               ],
-            )),
+            ),
           ],
         ),
       ),

@@ -44,34 +44,40 @@ class _ChatListPageViewState extends State<ChatScreen> {
                     snap: true,
                     primary: true,
                     forceElevated: innerBoxIsScrolled,
-                    bottom: TabBar(
-                        // indicator: UnderlineTabIndicator(
-                        //   borderSide: BorderSide(width: 5.0),
-                        // ),
-                        unselectedLabelColor: Colors.grey,
-                        indicatorColor: AppColors.RedDark,
-                        tabs: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.only(bottom: 10),
-                            child: Text(
-                              'BUYING',
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.bold),
+                    bottom:  TabBar(
+                        unselectedLabelColor: AppColors.BlueDark,
+                        indicatorSize: TabBarIndicatorSize.label,
+                        indicator: BoxDecoration(
+                          borderRadius: BorderRadius.circular(40),
+                          color: AppColors.BlueDark,
+                        ),
+                        tabs: [
+                          Tab(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(40),
+                                  border: Border.all(
+                                      color: AppColors.BlueDark, width: 2)),
+                              child: Align(
+                                alignment: Alignment.center,
+                                child: Text("SELLING"),
+                              ),
                             ),
                           ),
-                          Padding(
-                            padding: EdgeInsets.only(bottom: 10),
-                            child: Text(
-                              'SELLING',
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.bold),
+                          Tab(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(50),
+                                  border: Border.all(
+                                      color: AppColors.BlueDark, width: 1)),
+                              child: Align(
+                                alignment: Alignment.center,
+                                child: Text("BUYING"),
+                              ),
                             ),
                           ),
-                        ]),
+                        ],
+                      ),
                   ),
                 ),
               ];
@@ -80,7 +86,7 @@ class _ChatListPageViewState extends State<ChatScreen> {
               children: <Widget>[
                 Container(
                   decoration: BoxDecoration(
-                      color: myColors.backGround,
+                      color: Colors.white,
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(15.0),
                         topRight: Radius.circular(15.0),
