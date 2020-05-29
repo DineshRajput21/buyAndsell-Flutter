@@ -5,7 +5,6 @@ import 'package:BuyAndSell/screens/settings/screens/Help.dart';
 import 'package:BuyAndSell/screens/settings/screens/Profile.dart';
 import 'package:flutter/material.dart';
 
-import 'screens/splash/Splash.dart';
 import 'screens/bottomTabBar/Tabs.dart';
 import 'screens/exploreScreens/categories/Categories.dart';
 import 'screens/exploreScreens/adsDetails/AdsDetails.dart';
@@ -13,7 +12,6 @@ import 'screens/onBoarding/signup/Signup.dart';
 
 class Routes {
   Routes._();
-  static const String splash = '/splash';
   static const String login = '/login';
   static const String signup = '/signup';
   static const String tabs = '/tabs';
@@ -24,7 +22,6 @@ class Routes {
   static const String profile = '/profile';
 
   static final routes = <String, WidgetBuilder> {
-    splash: (BuildContext context) => SplashScreen(),
     signup: (BuildContext context) => Signup(),
     login: (BuildContext context) => LoginScreen(),
     tabs: (BuildContext context) => Tabs(),

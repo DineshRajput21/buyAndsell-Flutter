@@ -1,5 +1,5 @@
 import 'package:BuyAndSell/routes.dart';
-import 'package:BuyAndSell/screens/splash/Splash.dart';
+import 'package:BuyAndSell/screens/onBoarding/login/Login.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       routes: Routes.routes,
-      home: SplashScreen(),
+      home: LoginScreen(),
     );
   }
 }
