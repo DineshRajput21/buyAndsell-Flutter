@@ -55,10 +55,10 @@ class _AdsDetialScreenState extends State<AdsDetailScreen>
     Widget carousel = Carousel(
       boxFit: BoxFit.cover,
       images: [
-        AssetImage('assets/images/recommendImages/furniture.jpeg'),
-        AssetImage('assets/images/recommendImages/cycle.jpeg'),
-        AssetImage('assets/images/recommendImages/furniture.jpeg'),
-        AssetImage('assets/images/recommendImages/cycle.jpeg'),
+        AssetImage('assets/images/products/furniture.jpeg'),
+        AssetImage('assets/images/products/cycle.jpeg'),
+        AssetImage('assets/images/products/furniture.jpeg'),
+        AssetImage('assets/images/products/cycle.jpeg'),
       ],
       animationCurve: Curves.fastOutSlowIn,
       animationDuration: Duration(seconds: 2),

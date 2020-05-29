@@ -49,14 +49,12 @@ class _SettingsState extends State<Settings> {
           fit: StackFit.expand,
           children: <Widget>[
             ClipPath(
-            clipper: WaveClipperTwo(),
-            child: Container(
-              decoration: BoxDecoration(
-                color: AppColors.ManuGrey
+              clipper: WaveClipperTwo(),
+              child: Container(
+                decoration: BoxDecoration(color: AppColors.ManuGrey),
+                height: 100,
               ),
-              height: 100,
             ),
-          ),
             SingleChildScrollView(
               padding: const EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 10.0),
               child: Column(
@@ -69,7 +67,7 @@ class _SettingsState extends State<Settings> {
                     color: AppColors.BlueDark,
                     child: ListTile(
                       onTap: () {
-                        //open edit profile
+                        Navigator.of(context).pushNamed(Routes.profile);
                       },
                       title: Text(
                         "Dinesh Rajput",

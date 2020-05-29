@@ -100,7 +100,8 @@ class CategorySwiper extends StatelessWidget {
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: catArray.length,
-                  itemBuilder: (BuildContext context, int index) => Column(
+                  itemBuilder: (BuildContext context, int index) => 
+                   Column(
                         children: <Widget>[
                           Container(
                             margin: EdgeInsets.fromLTRB(30, 15, 30, 10),
@@ -110,7 +111,7 @@ class CategorySwiper extends StatelessWidget {
                                 boxShadow: [
                                   BoxShadow(
                                       color: catArray[index]['color'],
-                                      spreadRadius: 0)
+                                      )
                                 ]),
                             padding: EdgeInsets.all(14),
                             child: Center(child: Icon(catArray[index]['icon'])),

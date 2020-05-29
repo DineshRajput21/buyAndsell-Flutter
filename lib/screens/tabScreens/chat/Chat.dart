@@ -37,6 +37,8 @@ class _ChatListPageViewState extends State<ChatScreen> {
                       'CHATS',
                       style: TextStyle(
                         color: Colors.black,
+                         fontSize: 18,
+                         fontWeight: FontWeight.bold
                       ),
                     ),
                     floating: true,
@@ -46,33 +48,26 @@ class _ChatListPageViewState extends State<ChatScreen> {
                     forceElevated: innerBoxIsScrolled,
                     bottom:  TabBar(
                         unselectedLabelColor: AppColors.BlueDark,
-                        indicatorSize: TabBarIndicatorSize.label,
-                        indicator: BoxDecoration(
-                          borderRadius: BorderRadius.circular(40),
-                          color: AppColors.BlueDark,
-                        ),
+                        indicatorSize: TabBarIndicatorSize.tab,
+                        indicatorColor: AppColors.BlueDark,
                         tabs: [
                           Tab(
                             child: Container(
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(40),
-                                  border: Border.all(
-                                      color: AppColors.BlueDark, width: 2)),
                               child: Align(
                                 alignment: Alignment.center,
-                                child: Text("SELLING"),
+                                child: Text("SELLING", 
+                                style: TextStyle(color: Colors.black, fontSize: 17),
+                                ),
                               ),
                             ),
                           ),
                           Tab(
                             child: Container(
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(50),
-                                  border: Border.all(
-                                      color: AppColors.BlueDark, width: 1)),
                               child: Align(
                                 alignment: Alignment.center,
-                                child: Text("BUYING"),
+                                child: Text("BUYING", 
+                                style: TextStyle(color: Colors.black, fontSize: 17),
+                                ),
                               ),
                             ),
                           ),

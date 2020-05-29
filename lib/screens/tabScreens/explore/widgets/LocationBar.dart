@@ -1,3 +1,4 @@
+import 'package:BuyAndSell/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -45,8 +46,11 @@ class LocationBar extends StatelessWidget {
               ),
             ],
           ),
-          CircleAvatar(
-            backgroundImage: AssetImage('assets/icons/me.jpg'),
+          MaterialButton(
+            onPressed: () => Navigator.of(context).pushNamed(Routes.profile),
+            child: CircleAvatar(
+              backgroundImage: AssetImage('assets/icons/me.jpg'),
+            ),
           ),
         ],
       ),

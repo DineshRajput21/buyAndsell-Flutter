@@ -34,6 +34,8 @@ class _MyAdsScreenState extends State<MyAdsScreen> {
                       'MY ADS',
                       style: TextStyle(
                         color: Colors.black,
+                         fontSize: 18,
+                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     floating: true,
@@ -43,32 +45,28 @@ class _MyAdsScreenState extends State<MyAdsScreen> {
                     forceElevated: innerBoxIsScrolled,
                     bottom: TabBar(
                         unselectedLabelColor: AppColors.GreenDark,
-                        indicatorSize: TabBarIndicatorSize.label,
-                        indicator: BoxDecoration(
-                            borderRadius: BorderRadius.circular(40),
-                            color: AppColors.GreenDark),
+                        indicatorSize: TabBarIndicatorSize.tab,
+                        indicatorColor: AppColors.GreenDark,
                         tabs: [
                           Tab(
                             child: Container(
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(40),
-                                  border: Border.all(
-                                      color: AppColors.GreenDark, width: 1)),
                               child: Align(
                                 alignment: Alignment.center,
-                                child: Text("ADS"),
+                                child: Text(
+                                  "ADS",
+                                  style: TextStyle(color: Colors.black, fontSize: 17),
+                                ),
                               ),
                             ),
                           ),
                           Tab(
                             child: Container(
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(50),
-                                  border: Border.all(
-                                      color: AppColors.GreenDark, width: 1)),
                               child: Align(
                                 alignment: Alignment.center,
-                                child: Text("FAVOURITE"),
+                                child: Text(
+                                  "FAVOURITE",
+                                  style: TextStyle(color: Colors.black, fontSize: 17),
+                                ),
                               ),
                             ),
                           ),

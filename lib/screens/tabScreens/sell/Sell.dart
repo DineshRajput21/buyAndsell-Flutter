@@ -76,12 +76,13 @@ class SellScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           if(category.icon != null)
-            Icon(category.icon, size: 35,),
+            Icon(category.icon, size: 35, color: category.color,),
           if(category.icon != null)
             SizedBox(height: 8.0),
           Text(
             category.name,
             textAlign: TextAlign.center,
+            style: TextStyle(color: category.color, fontSize: 16, fontWeight: FontWeight.bold),
             maxLines: 3,),
         ],
       ),

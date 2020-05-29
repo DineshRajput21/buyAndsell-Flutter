@@ -7,20 +7,24 @@ import 'package:flip_panel/flip_panel.dart';
 class PopularAds extends StatelessWidget {
   final List<Map<String, dynamic>> addsArray = [
     {
-      'icon': 'assets/images/recommendImages/cycle.jpeg',
-      'name': 'Bike for girls',
+      'icon': 'assets/images/products/cycle.jpeg',
+      'name': 'Brand new cycle!',
+      'loc': 'ucreate, mohali, India',
     },
     {
-      'icon': 'assets/images/recommendImages/furniture.jpeg',
-      'name': 'Two seater sofa',
+      'icon': 'assets/images/products/coffeMaker.jpg',
+      'name': 'Coffee maker',
+      'loc': 'shimla, himachal Pradesh',
     },
     {
-      'icon': 'assets/images/recommendImages/cycle.jpeg',
-      'name': 'Bikes',
+      'icon': 'assets/images/products/cricket.jpg',
+      'name': 'MRF Cricket bat ',
+      'loc': 'sector 11, chandigarh',
     },
     {
-      'icon': 'assets/images/recommendImages/furniture.jpeg',
-      'name': 'Cars',
+      'icon': 'assets/images/products/furniture.jpeg',
+      'name': '2 seater brown sofa',
+      'loc': 'kharar, mohali, punjab',
     },
   ];
   @override
@@ -58,6 +62,12 @@ class PopularAds extends StatelessWidget {
                             EdgeInsets.fromLTRB(15, 0, 20, (height / 2) / 8),
                         width: width / 1.3,
                         decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey,
+                              blurRadius: 5.0,
+                            ),
+                          ],
                           borderRadius: BorderRadius.circular(10),
                           image: DecorationImage(
                             image: AssetImage(addsArray[index]['icon']),
@@ -70,9 +80,13 @@ class PopularAds extends StatelessWidget {
                         child: Align(
                           alignment: Alignment.center,
                           child: Card(
+                            elevation: 5.0,
                             child: Container(
                               width: width / 2,
                               height: width / 4.5,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15)
+                              ),
                               padding: EdgeInsets.all(10.0),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -115,8 +129,9 @@ class PopularAds extends StatelessWidget {
                                         FontAwesomeIcons.mapMarkerAlt,
                                         size: 12,
                                       ),
+                                      Padding(padding: EdgeInsets.only(left:3)),
                                       Text(
-                                        ' ucreate.it, mohali, India ',
+                                        addsArray[index]['loc'],
                                         style: TextStyle(
                                             fontSize: 12,
                                             fontWeight: FontWeight.w400,
