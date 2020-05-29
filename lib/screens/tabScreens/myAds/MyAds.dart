@@ -88,6 +88,7 @@ class _MyAdsScreenState extends State<MyAdsScreen> {
                   child: Column(
                     children: <Widget>[
                       FreshAds(),
+                      Container(margin: EdgeInsets.only(top:20),)
                     ],
                   ),
                 ),

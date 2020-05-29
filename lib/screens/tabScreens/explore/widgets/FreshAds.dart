@@ -27,7 +27,7 @@ class FreshAds extends StatelessWidget {
     {
       'icon': 'assets/images/products/coffeMaker.jpg',
       'name': 'Coffee maker',
-      'loc': 'shimla, himachal Pradesh',
+      'loc': 'shimla, himachal',
     },
     {
       'icon': 'assets/images/products/cycle.jpeg',
@@ -159,6 +159,7 @@ class FreshAds extends StatelessWidget {
               crossAxisSpacing: 15.0,
               mainAxisSpacing: 15.0,
               crossAxisCount: 2,
+              padding: EdgeInsets.only(bottom: 20),
               children:
                   addsArray.map((Item) => gridItem(context, Item)).toList(),
             ),
