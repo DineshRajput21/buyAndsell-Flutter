@@ -63,30 +63,16 @@ class CategoriesScreen extends StatelessWidget {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: AppColors.GreenDark,
+        title: Text('Categories',
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+      ),
       body: SafeArea(
-        child: Container(
-          padding: EdgeInsets.fromLTRB(15, 10, 15, 10),
+        child: SingleChildScrollView(
+          padding: EdgeInsets.fromLTRB(15, 0, 15, 30),
           child: Column(
             children: <Widget>[
-              GestureDetector(
-                onTap: () => Navigator.pop(context),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    Icon(FontAwesomeIcons.arrowLeft, size: 16,),
-                    Container(
-                      padding: EdgeInsets.only(left: 20),
-                      child: Text(
-                        'CATEGORIES',
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
               Container(
                 height: MediaQuery.of(context).size.height / 1.17,
                 padding: EdgeInsets.only(top: 20),
@@ -94,29 +80,35 @@ class CategoriesScreen extends StatelessWidget {
                   child: ListView.builder(
                       itemCount: catArray.length,
                       itemBuilder: (BuildContext context, int index) => Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              Container(
-                                margin: EdgeInsets.fromLTRB(20, 30, 0, 10),
-                                alignment: Alignment.center,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(30),
-                                    boxShadow: [
-                                      BoxShadow(
-                                          color: catArray[index]['color'],
-                                          spreadRadius: 0)
-                                    ]),
-                                padding: EdgeInsets.all(14),
-                                child: Center(
-                                    child: Icon(catArray[index]['icon'])),
-                              ),
-                              Container(
-                                width: width / 4,
-                                child: Text(catArray[index]['name'],
-                                    style: TextStyle(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w600,
-                                        color: Colors.black)),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: <Widget>[
+                                  Container(
+                                    margin: EdgeInsets.fromLTRB(20, 30, 0, 10),
+                                    alignment: Alignment.center,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(30),
+                                        boxShadow: [
+                                          BoxShadow(
+                                              color: catArray[index]['color'],
+                                              spreadRadius: 0)
+                                        ]),
+                                    padding: EdgeInsets.all(14),
+                                    child: Center(
+                                        child: Icon(catArray[index]['icon'])),
+                                  ),
+                                  Container(
+                                    width: width / 2,
+                                    padding: EdgeInsets.only(left: 25),
+                                    child: Text(catArray[index]['name'],
+                                        style: TextStyle(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w600,
+                                            color: Colors.black)),
+                                  ),
+                                ],
                               ),
                               Icon(FontAwesomeIcons.caretRight)
                             ],

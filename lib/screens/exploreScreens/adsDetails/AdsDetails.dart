@@ -89,7 +89,7 @@ class _AdsDetialScreenState extends State<AdsDetailScreen>
           SliverList(
             delegate: SliverChildListDelegate(
               [
-                Expanded(
+                Container(
                   child: AnimatedOpacity(
                     duration: const Duration(milliseconds: 500),
                     opacity: opacity1,
@@ -186,7 +186,7 @@ class _AdsDetialScreenState extends State<AdsDetailScreen>
                         ]),
                   ),
                 ),
-                Expanded(
+                Container(
                   child: AnimatedOpacity(
                     duration: const Duration(milliseconds: 500),
                     opacity: opacity2,
@@ -230,7 +230,7 @@ class _AdsDetialScreenState extends State<AdsDetailScreen>
                         )),
                   ),
                 ),
-                Expanded(
+                Container(
                   child: AnimatedOpacity(
                     duration: const Duration(milliseconds: 500),
                     opacity: opacity2,
@@ -274,7 +274,7 @@ class _AdsDetialScreenState extends State<AdsDetailScreen>
                         )),
                   ),
                 ),
-                Expanded(
+                Container(
                   child: AnimatedOpacity(
                     duration: const Duration(milliseconds: 500),
                     opacity: opacity3,
@@ -328,14 +328,15 @@ class _AdsDetialScreenState extends State<AdsDetailScreen>
           duration: const Duration(milliseconds: 500),
           opacity: opacity3,
           child: Padding(
-            padding: const EdgeInsets.only(top: 10, left: 16, right: 16, bottom: 10),
+            padding:
+                const EdgeInsets.only(top: 10, left: 16, right: 16, bottom: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Container(
-                  width: 50,
-                  height: 50,
+                  width: 45,
+                  height: 45,
                   child: Container(
                     decoration: BoxDecoration(
                         border:
@@ -348,42 +349,41 @@ class _AdsDetialScreenState extends State<AdsDetailScreen>
                     child: Icon(
                       FontAwesomeIcons.heartbeat,
                       color: AppColors.RedDark,
-                      size: 30,
+                      size: 28,
                     ),
                   ),
                 ),
                 const SizedBox(
                   width: 16,
                 ),
-                Expanded(
-                  child: Container(
-                    height: 48,
-                    decoration: BoxDecoration(
-                      color: AppColors.BlueDark,
-                      borderRadius: const BorderRadius.all(
-                        Radius.circular(16.0),
-                      ),
-                      boxShadow: <BoxShadow>[
-                        BoxShadow(
-                            color: AppColors.BlueDark.withOpacity(0.5),
-                            offset: const Offset(1.1, 1.1),
-                            blurRadius: 10.0),
-                      ],
+                Container(
+                  height: 48,
+                  width: width/1.6,
+                  decoration: BoxDecoration(
+                    color: AppColors.BlueDark,
+                    borderRadius: const BorderRadius.all(
+                      Radius.circular(16.0),
                     ),
-                    child: Center(
-                      child: Text(
-                        'CHAT NOW!',
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 18,
-                          letterSpacing: 0.0,
-                          color: Colors.white,
-                        ),
+                    boxShadow: <BoxShadow>[
+                      BoxShadow(
+                          color: AppColors.BlueDark.withOpacity(0.5),
+                          offset: const Offset(1.1, 1.1),
+                          blurRadius: 10.0),
+                    ],
+                  ),
+                  child: Center(
+                    child: Text(
+                      'CHAT NOW!',
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 18,
+                        letterSpacing: 0.0,
+                        color: Colors.white,
                       ),
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ),
