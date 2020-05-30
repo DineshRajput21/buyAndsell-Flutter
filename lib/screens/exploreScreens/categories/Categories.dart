@@ -90,7 +90,7 @@ class CategoriesScreen extends StatelessWidget {
               Container(
                 height: MediaQuery.of(context).size.height / 1.17,
                 padding: EdgeInsets.only(top: 20),
-                child: Expanded(
+                child: Container(
                   child: ListView.builder(
                       itemCount: catArray.length,
                       itemBuilder: (BuildContext context, int index) => Row(

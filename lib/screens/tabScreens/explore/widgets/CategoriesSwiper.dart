@@ -96,7 +96,7 @@ class CategorySwiper extends StatelessWidget {
           Container(
             height: MediaQuery.of(context).size.height / 6.5,
             padding: EdgeInsets.only(top: 5),
-            child: Expanded(
+            child: Container(
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: catArray.length,

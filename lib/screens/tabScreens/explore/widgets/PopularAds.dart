@@ -46,7 +46,7 @@ class PopularAds extends StatelessWidget {
           height: MediaQuery.of(context).size.height / 3.5,
           width: width,
           padding: EdgeInsets.only(top: 5),
-          child: Expanded(
+          child: Container(
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: addsArray.length,
