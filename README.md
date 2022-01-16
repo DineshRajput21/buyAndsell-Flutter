@@ -1,6 +1,10 @@
 # BuyAndSell
 
-A new Flutter project.
+A new Flutter project UI Kit.
+
+![Buy Sell](https://user-images.githubusercontent.com/6690041/149653049-b36d21ab-cd70-4bf5-a320-9413a1b1a5b9.jpg)
+
+
 
 ## Getting Started
 
